@@ -29,5 +29,21 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+/* this will automatically generate the migrations for us toul , so its an alternative way of executing migrations ali deja aamlnehum*/
+using var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+var context = services.GetRequiredService<StoreContext>();
+var logger = services.GetRequiredService<ILogger<Program>>();
+try
+{
+    await context.Database.MigrateAsync(); //this will excute migrations into the database , if the data base dosen't exist it will actually create it !
+}
+catch(Exception ex) 
+{
+    logger.LogError(ex,"an error occured during migrations");
+}
+
+
+
 
 app.Run();

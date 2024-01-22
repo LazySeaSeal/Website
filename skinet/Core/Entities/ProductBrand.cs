@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class BaseEntity
+    public class ProductBrand : BaseEntity
     {
-        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

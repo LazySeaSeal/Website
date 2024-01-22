@@ -37,6 +37,7 @@ var logger = services.GetRequiredService<ILogger<Program>>();
 try
 {
     await context.Database.MigrateAsync(); //this will excute migrations into the database , if the data base dosen't exist it will actually create it !
+    await StoreContextSeed.SeedAsync(context); // for seeding the database
 }
 catch(Exception ex) 
 {

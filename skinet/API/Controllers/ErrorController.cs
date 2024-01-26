@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [Route("errors/{code}")]
+        [Route("errors/{code}")]
+        [ApiExplorerSettings(IgnoreApi = true)] // ignore so swagger can't see it so no errrs will be there
     public class ErrorController : BaseApiController
     {
         // this will treat the for api/"7aja mouch mawjouda" fil url

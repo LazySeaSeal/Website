@@ -46,11 +46,9 @@ app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
-if (app.Environment.IsDevelopment())
-{
+// normaly there's an i f here to check if we're in dev mode or not , but we want swagger to be avlaible anyways
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
 app.UseStaticFiles();
 app.UseAuthorization();

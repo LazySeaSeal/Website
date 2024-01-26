@@ -1,3 +1,4 @@
+using API.Middleware;
 using Core.Interfaces;
 using Infrastructue.Data;
 using Infrastructure.Data;
@@ -23,7 +24,10 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline.(middlwares !!!!!!)
+app.UseMiddleware<ExceptionMiddleware>();
+
+
 app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 if (app.Environment.IsDevelopment())
@@ -50,8 +54,5 @@ catch(Exception ex)
 {
     logger.LogError(ex,"an error occured during migrations");
 }
-
-
-
 
 app.Run();

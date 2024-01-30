@@ -29,9 +29,10 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(string sort)
+        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(string sort
+        ,int?BrandId , int? typeId)
         {
-            var  spec = new ProductsWithTypesAndBrandsSpecification(sort);
+            var  spec = new ProductsWithTypesAndBrandsSpecification(sort, BrandId, typeId);
             var products = await _productsRepo.ListAsync(spec);
 
             return Ok(_mapper

@@ -20,6 +20,7 @@ namespace Infrastructue.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             // this part for fixing errors from converting data to sqlite
+            //aatention au spelling !!!
             if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
             {
                     foreach (var entityType in modelBuilder.Model.GetEntityTypes())
@@ -34,8 +35,8 @@ namespace Infrastructue.Data
                          }
 
 
-            
-                    }
+          
+                   }
             }
 
         }

@@ -16,7 +16,7 @@ builder.Services.AddpApplicationServices(builder.Configuration);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.(middlwares !!!!!!)
+// Configure the HTTP request pipeline.(middlwares + order mateers since its a pipeline!!!!!!)
 app.UseMiddleware<ExceptionMiddleware>();
 
 
@@ -27,6 +27,9 @@ app.UseStatusCodePagesWithReExecute("/errors/{0}");
     app.UseSwaggerUI();
 
 app.UseStaticFiles();
+
+app.UseCors("CorsPolicy");
+
 app.UseAuthorization();
 
 app.MapControllers();

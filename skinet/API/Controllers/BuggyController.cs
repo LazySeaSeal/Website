@@ -22,7 +22,7 @@ namespace API.Controllers
         [HttpGet("notfound")]
         public ActionResult GetNotFoundRequest()
         {
-            var thing=_context.Products.Find(42);
+            var thing=_context.Products.Find(42); //exemple
             if (thing == null)
             {
                 return NotFound(new ApiResponse(404));
@@ -34,7 +34,7 @@ namespace API.Controllers
         public ActionResult GetServerError()
         {
             var thing=_context.Products.Find(42);
-            var thingToReturn = thing.ToString();
+            var thingToReturn = thing.ToString(); // thing fiha null , donc thing.ToString() va retourner une erreur w ye9f ghadi so we fixed it ...
             
             return Ok();
 
@@ -44,6 +44,7 @@ namespace API.Controllers
         {
             return NotFound(new ApiResponse(400));
         }
+        
         [HttpGet("badrequest/{id}")]
         public ActionResult GetBadRequest(int id)
         {

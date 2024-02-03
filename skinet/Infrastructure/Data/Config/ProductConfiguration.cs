@@ -8,6 +8,7 @@ namespace Infrastructure.Data.Config
 {
     public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
+        //specification lil migration en details !
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.Property(p=>p.Id).IsRequired();

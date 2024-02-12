@@ -12,8 +12,6 @@ import { ShopModule } from "./shop/shop.module";
     declarations: [
         AppComponent,
     ],
-    providers: [],
-    bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -21,6 +19,9 @@ import { ShopModule } from "./shop/shop.module";
         HttpClientModule,
         CoreModule,
         ShopModule
-    ]
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    
 })
 export class AppModule { }

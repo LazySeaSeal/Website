@@ -16,12 +16,12 @@ export class ShopService {
   
   getProducts(shopParams: ShopParams){
     let params= new HttpParams();
-    if (shopParams.brandId >0) params = params.append('brandId',shopParams.brandId);
-    if (shopParams.typeId) params = params.append('typeId',shopParams.typeId);
-    params = params.append('sort',shopParams.sort);
-    params = params.append('pageIndex',shopParams.pageNumber);
-    params = params.append('pageSize',shopParams.pageSize);
-
+    if (shopParams.brandId > 0) params = params.append('brandId', shopParams.brandId);
+    if (shopParams.typeId) params = params.append('typeId', shopParams.typeId);
+    params = params.append('sort', shopParams.sort);
+    params = params.append('pageIndex', shopParams.pageNumber);
+    params = params.append('pageSize', shopParams.pageSize);
+    
     return this.http.get<Pagination<Product[]>>(this.baseUrl + 'products' ,{params});
   }
 getBrands() {

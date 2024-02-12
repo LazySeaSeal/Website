@@ -17,6 +17,7 @@ import { SharedModule } from 'app/shared/shared.module';
   ],
   exports: [
     ShopComponent
+
   ]
 })
 export class ShopModule { }

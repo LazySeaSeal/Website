@@ -28,8 +28,8 @@ namespace API.Controllers
             var updatedBasket= await _basketRepository.UpdateBasketAsync(basket);
             return Ok(updatedBasket);
         }
-        [HttpDelete]
-        public async Task DeletedBasketAsync(string id)
+         [HttpDelete]
+        public async Task DeleteBasketAsync(string id)
         {
             await _basketRepository.DeleteBasketAsync(id);
         }
